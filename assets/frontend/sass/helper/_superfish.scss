@@ -1,0 +1,33 @@
+/*** ESSENTIAL STYLES ***/
+@mixin sf-menu() {
+  list-style: none;
+  ul, li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li{
+    position: relative;
+  }
+  &>li{
+    float: left;
+  }
+  li:hover > ul.sub-menu{
+    display: block !important;
+  }
+  ul.sub-menu{
+    position: absolute;
+    display: none !important;
+    top: 100%;
+    left: 0;
+    z-index: 99;
+  }
+  a{
+    display: block;
+    position: relative;
+  }
+  ul.sub-menu ul{
+    top: 0;
+    left: 100%;
+  }
+}

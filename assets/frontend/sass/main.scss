@@ -1,0 +1,248 @@
+@import "compass";
+@import "susy";
+@import "helper/normalize";
+@import "helper/andy";
+@import "helper/superfish";
+@import "menu/*.png";
+@import "box/*.png";
+
+// Susy settings
+$total-columns: 12 !global; // 12 columns
+$column-width: 80px !global; // columns are 80px wide, container are 960px wide
+$gutter-width: 10px !global; // with 0px gutters. Column have no margin
+$grid-padding: 0px !global; // and 1em padding on the grid container
+// Compass settings
+$menu-sprite-dimensions: true; /* Generate dimensions */
+$box-sprite-dimensions: true; /* Generate dimensions */
+$disable-magic-sprite-selectors: true; /* Important to disable auto generate sprites class */
+
+*, *:before, *:after{
+	@include box-sizing(border-box);
+}
+ul, ol{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+body{
+	background: url(../img/top_bgmain.jpg) center top no-repeat;
+	font-family: Tahoma;
+	background-color: #eadec6;
+}
+#wrapper{
+	@include container;
+	width: 1000px;
+}
+#header{
+	margin-top: 45px;
+	@include clearfix;
+	ul.menu{
+		@include horizontal-list;
+		@include sf-menu;
+		width: 350px;
+		float: left;
+		display: block;
+		&>li{
+			padding: 0 10px;
+			background: url(../img/border.png) right top no-repeat;
+			height: 34px;
+			&:last-child{
+				background: none;
+			}
+			&>a{
+				@include text-hide;
+				margin-top: 13px;
+			}
+		}
+		&.left-menu{
+			margin-left: 55px;
+		}
+		&.right-menu{
+			margin-left: 195px;
+		}
+		ul.sub-menu{
+			padding-top: 12px;
+			a{
+				padding: 5px 0 5px 10px;
+				width: 180px;
+				background: url(../img/bg_sub_menu.png) left top repeat-x;
+				color: #553115;
+				border-bottom: 1px solid #bc9c75;
+				text-decoration: none;
+				font-weight: bold;
+				font-size: 12px;
+				&:hover{
+					background: url(../img/bg_sub_menu_hover.png) left top repeat-x;
+				}
+			}
+		}
+		li:hover a{
+				&.trangchu{
+					@include menu-sprite(trangchu_hover);
+				}
+				&.tintuc{
+					@include menu-sprite(tintuc_hover);
+				}
+				&.sukien{
+					@include menu-sprite(sukien_hover);
+				}
+				&.gioithieu{
+					@include menu-sprite(gioithieu_hover);
+				}
+				&.dactrung{
+					@include menu-sprite(dactrung_hover);
+				}
+				&.huongdan{
+					@include menu-sprite(huongdan_hover);
+				}
+				&.download{
+					@include menu-sprite(download_hover);
+				}
+				&.congdong{
+					@include menu-sprite(congdong_hover);
+				}
+			}
+		a{
+			&.trangchu{
+				@include menu-sprite(trangchu);
+			}
+			&.tintuc{
+				@include menu-sprite(tintuc);
+			}
+			&.sukien{
+				@include menu-sprite(sukien);
+			}
+			&.gioithieu{
+				@include menu-sprite(gioithieu);
+			}
+			&.dactrung{
+				@include menu-sprite(dactrung);
+			}
+			&.huongdan{
+				@include menu-sprite(huongdan);
+			}
+			&.download{
+				@include menu-sprite(download);
+			}
+			&.congdong{
+				@include menu-sprite(congdong);
+			}
+		}
+	}
+}
+.flash-wrapper{
+	text-align: center;
+}
+#main{
+	@include clearfix;
+	.left-side{
+		@include span-columns(6,12);
+	}
+	.right-side{
+		padding-left: 45px;
+		@include span-columns(6 omega,12);
+	}
+	.box{
+		margin-top: 20px;
+		float: left;
+		background: url(../img/bg_content.png) left top no-repeat;
+		width: 451px;
+		height: 313px;
+		padding: 5px;
+		.box-title{
+			background: url(../img/bg_title.png) left top no-repeat;
+			height: 32px;
+			width: 442px;
+			padding: 5px 35px;
+			margin: 0;
+			a{
+				@include text-hide;
+				display: block;
+				&.news{
+					@include box-sprite(Tintuc);
+				}
+				&.gamethust{
+					@include box-sprite(gamethust);
+				}
+				&.sukien{
+					@include box-sprite(sukien);
+				}
+				&.baochi{
+					@include box-sprite(Baochi);
+				}
+				&.Thuviencolong{
+					@include box-sprite(Thuviencolong);
+				}
+			}
+		}
+		.box-content{
+			@include clearfix;
+			padding-top: 10px;
+			.img{
+				width: 125px;
+				float: left;
+				img{
+					border: 1px solid #e7bd7d;
+					padding: 2px;
+				}
+			}
+			.text{
+				width: 300px;
+				float: left;
+				padding-left: 10px;
+				a.artile-title{
+					color: #c1500b;
+					text-decoration: none;
+				}
+			}
+		}
+		.list-article{
+			padding-left: 20px;
+			li{
+				list-style-image: url(../img/list-1.png);
+				padding: 4px 0;
+				border-bottom: solid 1px #d8c6ae;
+				a{
+					text-decoration: none;
+					font-size: 12px;
+					color: #322000;
+					&:hover{
+						color: #C90000;
+						text-decoration: underline;
+					}
+				}
+				span{
+					float: right;
+					font-size: 12px;
+				}
+			}
+		}
+	}
+	.slider{
+		margin-top: 20px;
+		float: left;
+		background: url(../img/slide/bg_slide.jpg) left top no-repeat;
+		width: 451px;
+		height: 313px;
+		padding: 19px 5px 0 5px;
+	}
+	.gallery{
+		padding-left: 12px;
+		li{
+			display: inline-block;
+		}
+		a{
+			display: block;
+			&:hover img{
+				border: 2px solid #e7bd7d;
+			}
+		}
+		img{
+			padding: 2px;
+			border: 2px solid #C57D2C;
+		}
+	}
+}
+#footer{
+	margin-top: 30px;
+}
