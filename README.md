@@ -1,2 +1,4 @@
-# colongvietnam/
-### a Sails application
+nodepress
+=========
+
+Simple CMS using SailsJS and AngularJS
