@@ -1,7 +1,7 @@
 nodepress
 =========
 
-Simple Node RESTful CMS using SailsJS and AngularJS
+Very simple Node RESTful CMS using SailsJS and AngularJS
 
 
 Dependencies
