@@ -5,12 +5,14 @@ Simple Node RESTful CMS using SailsJS and AngularJS
 
 
 Dependencies
-=========
+==
 
 node & npm
 
-SailsJs
+sailsjs
 
-Angular
+sails-mysql
 
-Tinymce
+angularjs
+
+tinymce
