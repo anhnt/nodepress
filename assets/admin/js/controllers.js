@@ -44,7 +44,7 @@ app.controller('PostCreateCtrl', ['$scope', 'PostFactory', '$location',
 
     /* callback for ng-click 'createPost': */
     $scope.createPost = function () {
-      UsersFactory.create($scope.post);
+      PostFactory.create($scope.post);
       $location.path('/posts');
     }
 }]);
